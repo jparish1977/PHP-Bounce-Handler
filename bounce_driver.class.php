@@ -644,7 +644,7 @@ class BounceHandler{
     }
 
     function fetch_status_messages($code){
-        include_once ("bounce_statuscodes.php");
+        include ("bounce_statuscodes.php");
         $ret = $this->format_status_code($code);
         $arr = explode('.', $ret['code']);
         $str = "<P><B>". $status_code_classes[$arr[0]]['title'] . "</B> - " .$status_code_classes[$arr[0]]['descr']. "  <B>". $status_code_subclasses[$arr[1].".".$arr[2]]['title'] . "</B> - " .$status_code_subclasses[$arr[1].".".$arr[2]]['descr']. "</P>";
